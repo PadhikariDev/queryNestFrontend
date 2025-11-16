@@ -1,6 +1,6 @@
 import Input from "../../components/Auth/Input";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import banner from "../../assets/auth.JPG"
 
@@ -14,7 +14,7 @@ export const Login = () => {
         if (email === "tech@querynest.com" && password === "123") {
             alert("Staff logged in");
             localStorage.setItem("staffLoggedIn", "true");
-            navigate("/Dashboard"); // Redirect to staff dashboard
+            navigate("/staffDashboard"); // Redirect to staff dashboard
             return;
         }
         if (email === "superadmin@querynest.com" && password === "123") {
@@ -86,12 +86,9 @@ export const Login = () => {
 
                     <p className="text-center text-gray-600 mt-8">
                         Don’t have an account?
-                        <a
-                            href="/signup"
-                            className="text-blue-700 font-semibold hover:underline ml-1"
-                        >
+                        <Link to="/signup" className="text-blue-700 font-semibold hover:underline ml-1">
                             Sign Up
-                        </a>
+                        </Link>
                     </p>
                 </div>
 

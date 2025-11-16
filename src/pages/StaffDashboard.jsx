@@ -15,7 +15,7 @@ const StaffDashboard = () => {
     // Initialize socket once
     useEffect(() => {
         if (!socketRef.current) {
-            socketRef.current = io("http://localhost:5000");
+            socketRef.current = io("https://querynest-8xr5.onrender.com");
 
             socketRef.current.on("receiveMessage", ({ roomId, message }) => {
                 setChatMessages((prev) => {
