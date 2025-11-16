@@ -14,7 +14,7 @@ export const Signup = () => {
     const handleSignUp = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:5000/api/users/register", {
+            await axios.post("https://querynest-8xr5.onrender.com/api/users/register", {
                 userName,
                 email,
                 password,

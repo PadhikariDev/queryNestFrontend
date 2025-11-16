@@ -8,7 +8,7 @@ export const UserDashboard = () => {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const { data } = await axios.get("http://localhost:5000/api/users/me", {
+                const { data } = await axios.get("https://querynest-8xr5.onrender.com/api/users/me", {
                     withCredentials: true,
                 });
                 setUserName(data.userName);
@@ -20,14 +20,14 @@ export const UserDashboard = () => {
         fetchUser();
     }, []);
     return (
-        <><div>{userName?(<div className="flex h-screen">
+        <><div>{userName ? (<div className="flex h-screen">
             <Sidebar />
 
             <div className="flex-1 p-8 bg-gray-100 overflow-auto">
                 <Outlet />
             </div>
-        </div>):( <h1>Loading...</h1>)}</div>
-        
+        </div>) : (<h1>Loading...</h1>)}</div>
+
         </>
     );
 };

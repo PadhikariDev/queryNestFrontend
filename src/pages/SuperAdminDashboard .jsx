@@ -31,12 +31,12 @@ const SuperAdminDashboard = () => {
         const fetchData = async () => {
             try {
                 // Fetch users
-                const usersRes = await axios.get("http://localhost:5000/api/users/allUsers", { withCredentials: true });
+                const usersRes = await axios.get("https://querynest-8xr5.onrender.com/api/users/allUsers", { withCredentials: true });
                 const users = usersRes.data;
                 setTotalUsers(users.length);
 
                 // Fetch queries
-                const queriesRes = await axios.get("http://localhost:5000/api/users/my-queries", { withCredentials: true });
+                const queriesRes = await axios.get("https://querynest-8xr5.onrender.com/api/users/my-queries", { withCredentials: true });
                 const queries = queriesRes.data.queries;
                 setTotalQueries(queries.length);
 

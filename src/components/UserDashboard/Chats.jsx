@@ -39,7 +39,7 @@ export default function Chats() {
   useEffect(() => {
     const fetchQueries = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/users/my-queries", {
+        const res = await axios.get("https://querynest-8xr5.onrender.com/api/users/my-queries", {
           withCredentials: true,
           headers: { Authorization: `Bearer ${token}` },
         });

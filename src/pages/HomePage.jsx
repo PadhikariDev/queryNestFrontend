@@ -8,7 +8,7 @@ export const HomePage = () => {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const { data } = await axios.get("http://localhost:5000/api/users/me", {
+                const { data } = await axios.get("https://querynest-8xr5.onrender.com/api/users/me", {
                     withCredentials: true,
                 });
                 setUserName(data.userName);

@@ -26,7 +26,7 @@ export const Login = () => {
 
         try {
             await axios.post(
-                "http://localhost:5000/api/users/login",
+                "https://querynest-8xr5.onrender.com/api/users/login",
                 { email, password }, { withCredentials: true }
             );
             alert("Logged in");

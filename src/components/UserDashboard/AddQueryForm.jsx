@@ -23,35 +23,35 @@ const AddQueryForm = ({ onSubmit }) => {
     };
 
     const handleSubmit = async (e) => {
-    e.preventDefault();
+        e.preventDefault();
 
-    if (!categories.length || !message)
-        return alert("All fields are required");
+        if (!categories.length || !message)
+            return alert("All fields are required");
 
-    try {
-        const res = await fetch("http://localhost:5000/api/users/add-query", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            credentials: "include", // send cookies
-            body: JSON.stringify({ categories, message }),
-        });
+        try {
+            const res = await fetch("https://querynest-8xr5.onrender.com/api/users/add-query", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                credentials: "include", // send cookies
+                body: JSON.stringify({ categories, message }),
+            });
 
-        const data = await res.json();
+            const data = await res.json();
 
-        if (res.ok) {
-            alert("Query submitted at " + new Date().toLocaleString());
-            setCategories([]);
-            setMessage("");
-        } else {
-            alert(data.message || data.error);
+            if (res.ok) {
+                alert("Query submitted at " + new Date().toLocaleString());
+                setCategories([]);
+                setMessage("");
+            } else {
+                alert(data.message || data.error);
+            }
+        } catch (err) {
+            console.log(err);
+            alert("Server error");
         }
-    } catch (err) {
-        console.log(err);
-        alert("Server error");
-    }
-};
+    };
 
 
 
